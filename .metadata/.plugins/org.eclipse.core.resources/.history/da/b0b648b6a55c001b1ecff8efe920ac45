@@ -161,13 +161,8 @@ static Scanner scanner = new Scanner(System.in);
 		Path path = Paths.get(scanner.next());
 		try
 		{
-			if(Files.deleteIfExists(path))
-			{
-			System.out.println("File Deleted!");}
-			else
-			{
-				System.out.println("File does not exit");
-			}
+			Files.deleteIfExists(path);
+			System.out.println("File Deleted!");
 		}catch(DirectoryNotEmptyException e) {
 			e.printStackTrace();
 		}catch(FileNotFoundException e) {
